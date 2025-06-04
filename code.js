@@ -71,8 +71,8 @@ function playGame(rounds){
         playRound(humanChoice, computerChoice)
     }
 
-    console.log(humanScore)
-    console.log(computerScore)
+    console.log("This is your final score!: " + humanScore)
+    console.log("This was the computers final score!: " + computerScore)
 }
 
 
