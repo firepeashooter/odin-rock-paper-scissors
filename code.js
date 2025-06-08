@@ -1,10 +1,14 @@
 
+/* 
 
-function getRandomInt(max){
-    return Math.floor(Math.random() * max)
-}
+Function that generates the computer choice for rock paper scissors
 
+*/
 function getComputerChoice(){
+
+    function getRandomInt(max){
+        return Math.floor(Math.random() * max)
+    }
 
     randomValue = getRandomInt(3)
 
@@ -18,14 +22,12 @@ function getComputerChoice(){
 }
 
 
-function getHumanChoice(){
-    return prompt('Rock, Paper, or Scissors?: ')
-}
+/*
 
+Function to play one round of rock paper scissors given the human choice and the computer choice
 
+*/
 
-
-    
 function playRound(humanChoice, computerChoice){
 
     humanChoice = humanChoice.toLowerCase()
@@ -58,10 +60,38 @@ function playRound(humanChoice, computerChoice){
 }
 
 
-    
 
-console.log("This is your final score!: " + humanScore)
-console.log("This was the computers final score!: " + computerScore)
+//Code that returns the value of any button pressed by the human using Event Delegation!
+
+
+let buttons = document.querySelector(".button--container");
+
+
+buttons.addEventListener("click", (e) => {
+    let target = e.target;
+
+    switch(target.id){
+
+        case 'rock': 
+            console.log("Human Selected Rock");
+            document.getElementById('human').textContent = 'Rock';
+            break;
+        case 'paper':
+            console.log("Human Selected Paper");
+            document.getElementById('human').textContent = 'Paper';
+            break;
+        case 'scissors':
+            console.log("Human Selected Scissors");
+            document.getElementById('human').textContent = 'Scissors';
+
+        
+    }
+
+
+
+
+
+})
 
 
 
