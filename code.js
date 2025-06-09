@@ -30,11 +30,10 @@ Function to play one round of rock paper scissors given the human choice and the
 
 function playRound(humanChoice, computerChoice){
 
-    humanChoice = humanChoice.toLowerCase()
-    computerChoice = computerChoice.toLowerCase()
+    humanChoice = humanChoice.toLowerCase();
+    computerChoice = computerChoice.toLowerCase();
 
-    console.log(humanChoice)
-    console.log(computerChoice)
+    document.getElementById('computer').textContent = computerChoice;
 
     if (humanChoice == computerChoice){
         console.log("Draw! You both picked" + humanChoice)
@@ -66,6 +65,9 @@ function playRound(humanChoice, computerChoice){
 
 let buttons = document.querySelector(".button--container");
 
+let humanScore = 0;
+let computerScore = 0;
+
 
 buttons.addEventListener("click", (e) => {
     let target = e.target;
@@ -75,14 +77,19 @@ buttons.addEventListener("click", (e) => {
         case 'rock': 
             console.log("Human Selected Rock");
             document.getElementById('human').textContent = 'Rock';
+            playRound('rock', getComputerChoice());
             break;
         case 'paper':
             console.log("Human Selected Paper");
             document.getElementById('human').textContent = 'Paper';
+            playRound('paper', getComputerChoice());
+
             break;
         case 'scissors':
             console.log("Human Selected Scissors");
             document.getElementById('human').textContent = 'Scissors';
+            playRound('scissors', getComputerChoice());
+
 
         
     }
