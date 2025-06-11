@@ -30,11 +30,24 @@ Function to play one round of rock paper scissors given the human choice and the
 
 function playRound(humanChoice, computerChoice){
 
+
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
 
     humanScoreDisplay = document.getElementById("humanscore");
     computerScoreDisplay = document.getElementById("computerscore");
+    championDisplay = document.getElementById("champion");
+
+
+
+    //Check win condition
+    if (humanScore >= 5){
+        championDisplay.textContent = "Human has Won the Game";
+
+    }else if (computerScore >=5){
+        championDisplay.textContent = "Computer has Won the Game";
+    }
+
 
     document.getElementById('computer').textContent = computerChoice;
 
