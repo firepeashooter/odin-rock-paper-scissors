@@ -42,10 +42,13 @@ function playRound(humanChoice, computerChoice){
 
     //Check win condition
     if (humanScore >= 5){
-        championDisplay.textContent = "Human has Won the Game";
+        alert('Congrats! You have won the Game!');
+        location.reload();
 
-    }else if (computerScore >=5){
-        championDisplay.textContent = "Computer has Won the Game";
+    }else if (computerScore >= 5){
+        alert('The Computer has won the game :(');
+        location.reload();
+
     }
 
 
@@ -65,7 +68,7 @@ function playRound(humanChoice, computerChoice){
         console.log("You win! Paper beats Rock!");
         humanScore += 1;
         humanScoreDisplay.textContent = humanScore;    
-    }else if (humanChoice == "paper" && computerChoice == 'scissors'){
+    }else if (humanChoice == "paper" && computerChoice == "scissors"){
         console.log("You lose! Scissors beats Paper!");
         computerScore += 1;
         computerScoreDisplay.textContent = computerScore;
@@ -98,18 +101,15 @@ buttons.addEventListener("click", (e) => {
 
         case 'rock': 
             console.log("Human Selected Rock");
-            document.getElementById('human').textContent = 'Rock';
             playRound('rock', getComputerChoice());
             break;
         case 'paper':
             console.log("Human Selected Paper");
-            document.getElementById('human').textContent = 'Paper';
             playRound('paper', getComputerChoice());
 
             break;
         case 'scissors':
             console.log("Human Selected Scissors");
-            document.getElementById('human').textContent = 'Scissors';
             playRound('scissors', getComputerChoice());
 
 
