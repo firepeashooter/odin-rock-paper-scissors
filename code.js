@@ -33,28 +33,37 @@ function playRound(humanChoice, computerChoice){
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
 
+    humanScoreDisplay = document.getElementById("humanscore");
+    computerScoreDisplay = document.getElementById("computerscore");
+
     document.getElementById('computer').textContent = computerChoice;
 
     if (humanChoice == computerChoice){
-        console.log("Draw! You both picked" + humanChoice)
+        console.log("Draw! You both picked" + humanChoice);
     }else if (humanChoice == "rock" && computerChoice == "scissors"){
-        console.log("You win! Rock beats Scissors")
-        humanScore += 1        
+        console.log("You win! Rock beats Scissors");
+        humanScore += 1;
+        humanScoreDisplay.textContent = humanScore;    
     }else if (humanChoice == "rock" && computerChoice == "paper"){
-        console.log("You lose! Paper beats Rock!")
-        computerScore += 1
+        console.log("You lose! Paper beats Rock!");
+        computerScore += 1;
+        computerScoreDisplay.textContent = computerScore;
     }else if (humanChoice == "paper" && computerChoice == "rock"){
-        console.log("You win! Paper beats Rock!")
-        humanScore += 1
+        console.log("You win! Paper beats Rock!");
+        humanScore += 1;
+        humanScoreDisplay.textContent = humanScore;    
     }else if (humanChoice == "paper" && computerChoice == 'scissors'){
-        console.log("You lose! Scissors beats Paper!")
-        computerScore += 1
+        console.log("You lose! Scissors beats Paper!");
+        computerScore += 1;
+        computerScoreDisplay.textContent = computerScore;
     }else if (humanChoice == "scissors" && computerChoice == "rock"){
-        console.log("You lose! Rock beats Scissors!")
-        computerScore += 1
+        console.log("You lose! Rock beats Scissors!");
+        computerScore += 1;
+        computerScoreDisplay.textContent = computerScore;
     }else if (humanChoice == "scissors" && computerChoice == "paper"){
         console.log("You won! Scissors beats Paper!")
-        humanScore += 1
+        humanScore += 1;
+        humanScoreDisplay.textContent = humanScore;    
     }
 }
 
